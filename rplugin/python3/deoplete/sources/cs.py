@@ -56,7 +56,7 @@ class Source(Base):
 
         completions = []
         for item in l:
-            display = item['MethodHeader'] or item['CompletionText']
+            display = item['MethodHeader'] or ''
             kind_str = item['ReturnType'] or item['DisplayText']
 
             completionText = item['CompletionText']
@@ -64,8 +64,9 @@ class Source(Base):
 
             completions.append(dict(
                 word=completionText,
-                abbr=display,
+                abbr=completionText,
                 info=description,
+                menu=display,
                 kind=kind_str,
                 icase=1,
                 dup=1))
