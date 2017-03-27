@@ -57,17 +57,17 @@ class Source(Base):
 
         completions = []
         for item in l:
-            display = item['MethodHeader'] if item['MethodHeader'] is not None and len(item['MethodHeader']) > 0 else item['CompletionText']
-            display += '\t'
-            display += item['ReturnType'] if item['ReturnType'] is not None and len(item['ReturnType']) > 0 else item['DisplayText']
+            display = item['MethodHeader'] or item['CompletionText']
+            kind_str = item['ReturnType'] or item['DisplayText']
 
             completionText = item['CompletionText']
-            description = item['Description'].replace('\r\n', '\n') if item['Description'] is not None else ''
+            description = item['Description'].replace('\r\n', '\n') or ''
 
             completions.append(dict(
                 word=completionText,
                 abbr=display,
                 info=description,
+                kind=kind_str,
                 icase=1,
                 dup=1))
 
