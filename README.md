@@ -1,5 +1,5 @@
 # deoplete-omnisharp
 
-Forked deoplete for Omnisharp and added 'kind' option to be used when completing.
+Forked deoplete for Omnisharp and made the completion menu more organized and informative.
 
-You have to have installed https://github.com/OmniSharp/omnisharp-vim and https://github.com/Shougo/deoplete.nvim.
+You need to have installed https://github.com/OmniSharp/omnisharp-vim and https://github.com/Shougo/deoplete.nvim.
