@@ -60,7 +60,8 @@ class Source(Base):
             kind_str = item['ReturnType'] or item['DisplayText']
 
             completionText = item['CompletionText']
-            description = item['Description'].replace('\r\n', '\n') or ''
+            # TODO: Fix
+            #description = item['Description'].replace('\r\n', '\n') or ''
 
             completions.append(dict(
                 word=completionText,
