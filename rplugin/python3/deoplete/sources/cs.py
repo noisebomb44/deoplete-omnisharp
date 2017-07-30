@@ -62,6 +62,7 @@ class Source(Base):
             completionText = item['CompletionText']
             # TODO: Fix
             #description = item['Description'].replace('\r\n', '\n') or ''
+            description = ''
 
             completions.append(dict(
                 word=completionText,
